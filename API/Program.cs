@@ -1,5 +1,6 @@
 using API.Data;
 using API.Entities;
+using API.Helpers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 });
 
 builder.Services.AddCors();
+builder.Services.AddScoped<LogUserActivity>();
+
 
 builder.Services.AddIdentityCore<AppUser>(opt =>
 {
