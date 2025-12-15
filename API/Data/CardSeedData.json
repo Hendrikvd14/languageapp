@@ -1,0 +1,835 @@
+[
+  {
+    "front": "el",
+    "back": "de/het",
+    "exampleSentence": "El libro está en la mesa.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "la",
+    "back": "de/het",
+    "exampleSentence": "La casa es grande.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "de",
+    "back": "van/uit",
+    "exampleSentence": "Vengo de España.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "que",
+    "back": "dat/wat",
+    "exampleSentence": "Creo que es verdad.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "y",
+    "back": "en",
+    "exampleSentence": "Pan y agua.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "a",
+    "back": "naar/te",
+    "exampleSentence": "Voy a casa.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "en",
+    "back": "in",
+    "exampleSentence": "Estoy en el parque.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "un",
+    "back": "een",
+    "exampleSentence": "Un día soleado.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ser",
+    "back": "zijn",
+    "exampleSentence": "Quiero ser médico.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "se",
+    "back": "zich/er",
+    "exampleSentence": "Se habla español.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "no",
+    "back": "niet/geen",
+    "exampleSentence": "No quiero.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "haber",
+    "back": "hebben",
+    "exampleSentence": "Hay un problema.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "por",
+    "back": "door/voor",
+    "exampleSentence": "Lo hice por ti.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "con",
+    "back": "met",
+    "exampleSentence": "Café con leche.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "su",
+    "back": "zijn/haar/hun",
+    "exampleSentence": "Su coche es nuevo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "para",
+    "back": "voor/om",
+    "exampleSentence": "Es para ti.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "como",
+    "back": "zoals/als",
+    "exampleSentence": "Frío como el hielo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "estar",
+    "back": "zijn",
+    "exampleSentence": "Estoy cansado.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "tener",
+    "back": "hebben",
+    "exampleSentence": "Tengo hambre.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "le",
+    "back": "hem/haar",
+    "exampleSentence": "Le di el libro.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "lo",
+    "back": "het",
+    "exampleSentence": "Lo veo mañana.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "todo",
+    "back": "alles/helemaal",
+    "exampleSentence": "Todo el mundo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "pero",
+    "back": "maar",
+    "exampleSentence": "Quiero ir, pero no puedo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "más",
+    "back": "meer",
+    "exampleSentence": "Más rápido.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "hacer",
+    "back": "doen/maken",
+    "exampleSentence": "Voy a hacer la cena.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "o",
+    "back": "of",
+    "exampleSentence": "¿Sí o no?",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "poder",
+    "back": "kunnen",
+    "exampleSentence": "Puedo ayudarte.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "decir",
+    "back": "zeggen",
+    "exampleSentence": "¿Qué quieres decir?",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "este",
+    "back": "deze/dit",
+    "exampleSentence": "Este libro es mío.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ir",
+    "back": "gaan",
+    "exampleSentence": "Voy al cine.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "otro",
+    "back": "ander/een andere",
+    "exampleSentence": "Otro día.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ese",
+    "back": "die/dat",
+    "exampleSentence": "Ese coche es rápido.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "si",
+    "back": "als",
+    "exampleSentence": "Si llueve, me quedo en casa.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "me",
+    "back": "mij/me",
+    "exampleSentence": "Me gusta.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ya",
+    "back": "al/nu al",
+    "exampleSentence": "Ya llegué.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ver",
+    "back": "zien",
+    "exampleSentence": "Quiero ver la película.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "porque",
+    "back": "omdat",
+    "exampleSentence": "No fui porque estaba enfermo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "dar",
+    "back": "geven",
+    "exampleSentence": "Voy a dar un regalo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "cuando",
+    "back": "wanneer",
+    "exampleSentence": "Cuando llegues, avísame.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "él",
+    "back": "hij",
+    "exampleSentence": "Él es mi amigo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "muy",
+    "back": "zeer",
+    "exampleSentence": "Muy interesante.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "sin",
+    "back": "zonder",
+    "exampleSentence": "Café sin azúcar.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "vez",
+    "back": "keer",
+    "exampleSentence": "Una vez al día.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "también",
+    "back": "ook",
+    "exampleSentence": "Yo también quiero ir.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "hasta",
+    "back": "tot",
+    "exampleSentence": "Abierto hasta las 8.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "desde",
+    "back": "sinds/vanaf",
+    "exampleSentence": "Desde ayer.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "sobre",
+    "back": "over/boven",
+    "exampleSentence": "Un libro sobre historia.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "aquí",
+    "back": "hier",
+    "exampleSentence": "Ven aquí.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "nos",
+    "back": "ons",
+    "exampleSentence": "Nos vemos mañana.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "al",
+    "back": "naar het",
+    "exampleSentence": "Voy al mercado.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "bien",
+    "back": "goed",
+    "exampleSentence": "Estoy bien.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "solo",
+    "back": "alleen",
+    "exampleSentence": "Estoy solo en casa.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "uno",
+    "back": "één",
+    "exampleSentence": "Solo tengo uno.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ahora",
+    "back": "nu",
+    "exampleSentence": "Ahora mismo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "mismo",
+    "back": "zelfde",
+    "exampleSentence": "El mismo coche.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "tiempo",
+    "back": "tijd",
+    "exampleSentence": "No tengo tiempo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "esa",
+    "back": "die",
+    "exampleSentence": "Esa mujer es mi madre.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "mí",
+    "back": "mij",
+    "exampleSentence": "Es para mí.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "antes",
+    "back": "voor/ervoor",
+    "exampleSentence": "Antes de comer.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "casa",
+    "back": "huis/thuis",
+    "exampleSentence": "Mi casa es tu casa.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "dos",
+    "back": "twee",
+    "exampleSentence": "Dos personas.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "gran",
+    "back": "groot",
+    "exampleSentence": "Un gran día.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "poco",
+    "back": "weinig",
+    "exampleSentence": "Un poco de sal.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "vida",
+    "back": "leven",
+    "exampleSentence": "La vida es bella.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "trabajo",
+    "back": "werk",
+    "exampleSentence": "Mi trabajo es interesante.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "hombre",
+    "back": "man",
+    "exampleSentence": "Un hombre honesto.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "necesitar",
+    "back": "nodig hebben",
+    "exampleSentence": "Necesito ayuda.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "parte",
+    "back": "deel",
+    "exampleSentence": "La primera parte.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "nunca",
+    "back": "nooit",
+    "exampleSentence": "Nunca he estado allí.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "agua",
+    "back": "water",
+    "exampleSentence": "Agua fría.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "país",
+    "back": "land",
+    "exampleSentence": "Mi país es España.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "mundo",
+    "back": "wereld",
+    "exampleSentence": "Todo el mundo sabe.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "amigo",
+    "back": "vriend",
+    "exampleSentence": "Mi mejor amigo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "momento",
+    "back": "moment",
+    "exampleSentence": "En este momento.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ni",
+    "back": "noch",
+    "exampleSentence": "Ni sí ni no.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "dinero",
+    "back": "geld",
+    "exampleSentence": "No tengo dinero.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "día",
+    "back": "dag",
+    "exampleSentence": "Buenos días.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "cosa",
+    "back": "ding",
+    "exampleSentence": "Una cosa importante.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "año",
+    "back": "jaar",
+    "exampleSentence": "Tengo veinte años.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "mano",
+    "back": "hand",
+    "exampleSentence": "Dame la mano.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "problema",
+    "back": "probleem",
+    "exampleSentence": "Tenemos un problema.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "lugar",
+    "back": "plaats",
+    "exampleSentence": "Un lugar tranquilo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "persona",
+    "back": "persoon",
+    "exampleSentence": "Una persona amable.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "noche",
+    "back": "nacht",
+    "exampleSentence": "Buenas noches.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "gente",
+    "back": "mensen",
+    "exampleSentence": "Mucha gente.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "historia",
+    "back": "geschiedenis/verhaal",
+    "exampleSentence": "La historia de España.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "forma",
+    "back": "vorm",
+    "exampleSentence": "En forma de corazón.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "familia",
+    "back": "familie",
+    "exampleSentence": "Mi familia es grande.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "tres",
+    "back": "drie",
+    "exampleSentence": "Tres hermanos.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "entre",
+    "back": "tussen",
+    "exampleSentence": "Entre tú y yo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "padre",
+    "back": "vader",
+    "exampleSentence": "Mi padre es profesor.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "siempre",
+    "back": "altijd",
+    "exampleSentence": "Siempre contigo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "querer",
+    "back": "willen/houden van",
+    "exampleSentence": "Te quiero.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "comer",
+    "back": "eten",
+    "exampleSentence": "Vamos a comer.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ojo",
+    "back": "oog",
+    "exampleSentence": "Tengo algo en el ojo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "trabajar",
+    "back": "werken",
+    "exampleSentence": "Trabajo de lunes a viernes.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "semana",
+    "back": "week",
+    "exampleSentence": "La próxima semana.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "ciudad",
+    "back": "stad",
+    "exampleSentence": "Vivo en una ciudad grande.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "caso",
+    "back": "geval",
+    "exampleSentence": "En ese caso.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "hijo",
+    "back": "zoon",
+    "exampleSentence": "Mi hijo tiene cinco años.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "madre",
+    "back": "moeder",
+    "exampleSentence": "Mi madre cocina bien.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "pasar",
+    "back": "passeren/gebeuren",
+    "exampleSentence": "¿Qué pasa?",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "tal",
+    "back": "zo'n",
+    "exampleSentence": "Tal cosa no existe.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "primer",
+    "back": "eerste",
+    "exampleSentence": "El primer día.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "saber",
+    "back": "weten/kunnen",
+    "exampleSentence": "No sé la respuesta.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "llegar",
+    "back": "aankomen",
+    "exampleSentence": "Llegaré a las 8.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "dejar",
+    "back": "laten/achterlaten",
+    "exampleSentence": "Déjame en paz.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "cada",
+    "back": "elke",
+    "exampleSentence": "Cada día.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "mes",
+    "back": "maand",
+    "exampleSentence": "El mes próximo.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "grupo",
+    "back": "groep",
+    "exampleSentence": "Un grupo de amigos.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "mal",
+    "back": "slecht",
+    "exampleSentence": "Me siento mal.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "salir",
+    "back": "uitgaan/vertrekken",
+    "exampleSentence": "Voy a salir esta noche.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "hablar",
+    "back": "spreken",
+    "exampleSentence": "Hablamos español.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "menos",
+    "back": "minder",
+    "exampleSentence": "Menos azúcar, por favor.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "seguir",
+    "back": "volgen/doorgaan",
+    "exampleSentence": "Sigue adelante.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "libro",
+    "back": "boek",
+    "exampleSentence": "Estoy leyendo un libro.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "cuatro",
+    "back": "vier",
+    "exampleSentence": "Las cuatro estaciones.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "algo",
+    "back": "iets",
+    "exampleSentence": "Quiero algo de comer.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  },
+  {
+    "front": "joven",
+    "back": "jong",
+    "exampleSentence": "Un joven estudiante.",
+    "sourceLanguage": "es",
+    "targetLanguage": "nl"
+  }
+]

@@ -12,7 +12,7 @@ public class UserCardProgress
     public bool IsNew { get; set; }
 
     //navigation props
-    public int AppUserId { get; set; }
+    public string AppUserId { get; set; } = null!;
     public AppUser AppUser { get; set; } = null!;
     public int CardId { get; set; }
     public Card Card { get; set; } = null!;
