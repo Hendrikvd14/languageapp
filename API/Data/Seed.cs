@@ -34,7 +34,7 @@ public class Seed
             }
 
             var cardData = await File.ReadAllTextAsync("Data/CardSeedData.json");
-            var cards = JsonSerializer.Deserialize<List<SeedCardDto>>(cardData);
+            var cards = JsonSerializer.Deserialize<List<CardDto>>(cardData);
 
 
 

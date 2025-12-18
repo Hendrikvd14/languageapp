@@ -18,6 +18,7 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
 
 builder.Services.AddCors();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<LogUserActivity>();
 
 

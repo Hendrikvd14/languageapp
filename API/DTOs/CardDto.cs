@@ -4,8 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace API.DTOs;
 
-public class SeedCardDto
+public class CardDto
 {
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
     [JsonPropertyName("front")]
     public required string Front { get; set; }
     [JsonPropertyName("back")]
