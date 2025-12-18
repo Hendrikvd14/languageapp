@@ -3,10 +3,11 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Nav } from "../layout/nav/nav";
 import { LanguageCard } from "../features/cards/language-card/language-card";
+import { MascotIcon } from "../shared/mascot-icon/mascot-icon";
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, LanguageCard],
+  imports: [Nav, LanguageCard, MascotIcon],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
