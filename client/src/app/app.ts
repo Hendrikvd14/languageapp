@@ -4,10 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { Nav } from "../layout/nav/nav";
 import { LanguageCard } from "../features/cards/language-card/language-card";
 import { MascotIcon } from "../shared/mascot-icon/mascot-icon";
+import { filter, map, of } from 'rxjs';
+import { Home } from "../features/home/home";
 
 @Component({
   selector: 'app-root',
-  imports: [Nav, LanguageCard, MascotIcon],
+  imports: [Nav, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -15,8 +17,12 @@ export class App implements OnInit {
   
   private http = inject(HttpClient);
   protected readonly title = signal('client');
+  
 
   ngOnInit(): void {
+
+
+
     /* this.http.get('https://localhost:5001/api/members').subscribe({
       next: response => console.log(response),
       error: error => console.log(error),

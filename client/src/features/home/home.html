@@ -1,0 +1,96 @@
+@if (!registerMode()) {
+<div class="min-h-screen bg-base-200">
+    <!-- HERO -->
+    <section class="hero min-h-[70vh] bg-base-200">
+        <div class="hero-content flex-col lg:flex-row gap-12">
+
+            <div>
+                <h1 class="text-5xl font-bold">
+                    Leer een nieuwe taal.<br />
+                    <span class="text-primary">Elke dag een beetje.</span>
+                </h1>
+                <p class="py-6 max-w-xl text-lg opacity-80">
+                    Verbeter je woordenschat, uitspraak en grammatica met korte,
+                    effectieve oefeningen.
+                </p>
+                <div class="flex gap-4">
+                    <button class="btn btn-primary btn-lg" (click)="showRegister(true)">Begin nu</button>
+                    <button class="btn btn-outline btn-lg">Bekijk demo</button>
+                </div>
+            </div>
+
+            <!-- ILLUSTRATIE / ICON -->
+            <div class="text-primary">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-64 h-64" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+        </svg> -->
+                <app-mascot-icon />
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Waarom Lingua?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Dagelijkse oefeningen</h3>
+                        <p>Korte lessen die makkelijk in je dag passen.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Uitspraaktraining</h3>
+                        <p>Leer spreken met realtime feedback.</p>
+                    </div>
+                </div>
+
+                <div class="card bg-base-100 shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Meerdere talen</h3>
+                        <p>Van Engels tot Spaans en meer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="bg-base-200 py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Zo werkt het</h2>
+
+            <ul class="steps steps-vertical md:steps-horizontal w-full">
+                <li class="step step-primary">Kies je taal</li>
+                <li class="step step-primary">Oefen dagelijks</li>
+                <li class="step step-primary">Zie je vooruitgang</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 text-center">
+        <h2 class="text-4xl font-bold mb-6">
+            Klaar om te beginnen?
+        </h2>
+        <button class="btn btn-primary btn-lg">
+            Start vandaag nog
+        </button>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer footer-center p-6 bg-base-100 text-base-content">
+        <p>© 2025 Lingua – Alle rechten voorbehouden</p>
+    </footer>
+</div>
+} @else {
+<div class="hero min-h-screen bg-base-200">
+    <div class="text-2xl text-center flex justify-center w-full">
+        <app-register class="w-full" 
+            (cancelRegister)="showRegister(false)" />
+    </div>
+</div>
+}
