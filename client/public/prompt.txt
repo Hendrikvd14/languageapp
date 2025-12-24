@@ -1,0 +1,23 @@
+Gebruik de geüploade afbeelding als het absolute startframe en visuele anker.
+
+Geen cuts. Eén doorlopende shot.
+
+Verander het geüploade logo of object fysiek en zichtbaar in beeld in: 
+
+Het logo in een educatieve setting (bedoeld als demo voor een taal-leer-applicatie)
+
+De transformatie moet binnen hetzelfde shot plaatsvinden, terwijl de camera continu blijft kijken.
+
+De originele afbeelding mag niet verdwijnen, vervagen of vervangen worden - deze moet logisch evolueren naar de nieuwe vorm.
+
+Het eindresultaat moet voelen als een echte professionele reclame, geen animatie of motion graphic
+
+Geen tekst in beeld.
+Geen slogans.
+Geen captions.
+Geen UI-elementen.
+Geen eindkaart.
+
+De scène eindigt natuurlijk, alsof de camera gewoon stopt met filmen.
+
+Stijl: hyperrealistisch, filmisch, high-end commercial look.

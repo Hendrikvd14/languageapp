@@ -1,17 +1,18 @@
-
-<div class="navbar bg-base-100 shadow fixed z-10">
-  <div class="flex-1">
-    <a class="btn btn-ghost text-xl text-primary">Lingua</a>
+<div class="navbar bg-base-100 shadow fixed z-10 text-black">
+  <div class="flex-1 ">
+    <a class="btn btn-ghost text-xl" routerLink="/" routerLinkActive="text-primary"
+      [routerLinkActiveOptions]="{exact: true}">Lingua</a>
   </div>
+  @if(accountService.currentUser(); as user){
   <div class="flex-10">
-    <a class="btn btn-ghost text-xl text-balance">Cards</a>
+    <a class="btn btn-ghost text-xl" routerLink="/cards" routerLinkActive="text-primary">Cards</a>
   </div>
-  
-  <div class="flex-none gap-2">
+  }
+  <div class="flex items-center">
 
-    
 
-    <div class="dropdown mr-5 dropdown-end">
+
+    <div class="dropdown mr-10 dropdown-end">
       <button tabindex="1" class="flex flex-col justify-center align-middle 
                      cursor-pointer uppercase text-xs">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -31,7 +32,21 @@
     </div>
 
 
-    <a class="btn btn-ghost">Login</a>
-    <a class="btn btn-primary">Start gratis</a>
+    @if(accountService.currentUser(); as user){
+    <div class="dropdown mr-5 dropdown-end">
+      <div tabindex="0" role="button" class="flex items-center text-black gap-3 cursor-pointer">
+        <img [src]="user?.imageUrl || '/user.png'" alt="user avatar" class="w-10 h-10 rounded-full">
+        <span>{{user.displayName}}</span>
+      </div>
+      <ul (click)="handleSelectUserItem()" tabindex="0"
+        class="dropdown-content dropdown-end menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+        <li><a routerLink="/members/{{user.id}}">Edit profile</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </div>
+    }@else {
+    <a class="btn btn-ghost" routerLink="/login">Login</a>
+    <a class="btn btn-primary" routerLink="/register">Register</a>
+    }
   </div>
 </div>

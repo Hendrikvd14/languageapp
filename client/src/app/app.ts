@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Nav } from "../layout/nav/nav";
 import { LanguageCard } from "../features/cards/language-card/language-card";
 import { MascotIcon } from "../shared/mascot-icon/mascot-icon";
 import { filter, map, of } from 'rxjs';
 import { Home } from "../features/home/home";
+import { AccountService } from '../core/services/account-service';
 
 @Component({
   selector: 'app-root',
@@ -13,20 +14,8 @@ import { Home } from "../features/home/home";
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App{
   
-  private http = inject(HttpClient);
-  protected readonly title = signal('client');
+  protected router = inject(Router);
   
-
-  ngOnInit(): void {
-
-
-
-    /* this.http.get('https://localhost:5001/api/members').subscribe({
-      next: response => console.log(response),
-      error: error => console.log(error),
-      complete: () => console.log('Completed the http request')
-    }); */
-  }
 }
