@@ -1,0 +1,119 @@
+@if(memberService.member(); as member) {
+<div class="min-h-screen bg-base-200 py-10">
+    <div class="max-w-6xl mx-auto px-6 space-y-10">
+
+        <!-- PROFIEL HEADER -->
+        <section class="card bg-base-100 shadow">
+            <div class="card-body flex flex-col md:flex-row items-center gap-6">
+
+                <div class="avatar">
+                    <div class="w-24 rounded-full bg-primary text-primary-content flex items-center justify-center">
+                        <span class="text-3xl font-bold">A</span>
+                        <!-- of <app-mascot-icon /> -->
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold">Welkom terug, {{member.displayName}} 👋</h1>
+                    <p class="opacity-70">
+                        Je leert momenteel <strong>Engels</strong>
+                    </p>
+                    <div class="mt-2 badge badge-primary badge-lg">
+                        🔥 12 dagen streak
+                    </div>
+                </div>
+
+                <div class="ml-auto">
+                    <button class="btn btn-primary">
+                        Ga verder met oefenen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOORTGANG -->
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title">Lessen voltooid</div>
+                <div class="stat-value text-primary">48</div>
+            </div>
+
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title">Woordenschat</div>
+                <div class="stat-value text-primary">620</div>
+                <div class="stat-desc">woorden geleerd</div>
+            </div>
+
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title">Niveau</div>
+                <div class="stat-value text-primary">B1</div>
+            </div>
+
+            <div class="stat bg-base-100 shadow rounded-box">
+                <div class="stat-title">Oefentijd</div>
+                <div class="stat-value text-primary">15 min</div>
+                <div class="stat-desc">per dag</div>
+            </div>
+        </section>
+
+        <!-- TALEN -->
+        <section class="card bg-base-100 shadow">
+            <div class="card-body">
+                <h2 class="card-title">Mijn talen</h2>
+
+                <div class="flex flex-wrap gap-4">
+                    <div class="badge badge-primary badge-lg">🇬🇧 Engels</div>
+                    <div class="badge badge-outline badge-lg">🇪🇸 Spaans</div>
+                    <button class="btn btn-sm btn-outline">
+                        + Taal toevoegen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNELLE ACTIES -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card bg-base-100 shadow">
+                <div class="card-body">
+                    <h3 class="card-title">Dagelijkse oefening</h3>
+                    <p>Korte les om je streak te behouden.</p>
+                    <button class="btn btn-primary btn-sm mt-2">Start</button>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow">
+                <div class="card-body">
+                    <h3 class="card-title">Uitspraaktraining</h3>
+                    <p>Verbeter je accent met feedback.</p>
+                    <button class="btn btn-outline btn-sm mt-2">Oefen</button>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow">
+                <div class="card-body">
+                    <h3 class="card-title">Voortgang bekijken</h3>
+                    <p>Bekijk grafieken en statistieken.</p>
+                    <button class="btn btn-outline btn-sm mt-2">Open</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTELLINGEN -->
+        <section class="card bg-base-100 shadow">
+            <div class="card-body">
+                <h2 class="card-title">Account</h2>
+
+                <div class="flex flex-col gap-3">
+                    <a class="link link-hover">Profiel bewerken</a>
+                    <a class="link link-hover">Leerdoelen aanpassen</a>
+                    <a class="link link-hover">Notificatie-instellingen</a>
+                    <button class="btn btn-error btn-outline btn-sm w-fit">
+                        Uitloggen
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+}

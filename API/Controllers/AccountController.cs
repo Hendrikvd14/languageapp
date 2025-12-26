@@ -19,7 +19,15 @@ namespace API.Controllers
             {
                 DisplayName = registerDto.DisplayName,
                 Email = registerDto.Email.ToLowerInvariant(),
-                UserName = registerDto.Email.ToLowerInvariant()
+                UserName = registerDto.Email.ToLowerInvariant(),
+                Member = new Member
+                {
+                    DisplayName = registerDto.DisplayName,
+                    Gender = registerDto.Gender,
+                    City = registerDto.City,
+                    Country = registerDto.Country,
+                    DateOfBirth = registerDto.DateOfBirth
+                }
             };
 
             var result = await userManager.CreateAsync(user, registerDto.Password);

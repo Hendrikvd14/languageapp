@@ -6,7 +6,9 @@ namespace API.Data;
 public class UnitOfWork(AppDbContext context) : IUnitOfWork
 {
     private ICardRepository? _cardRepository;
+    private IMemberRepository? _memberRepository;
     public ICardRepository CardRepository => _cardRepository ??= new CardRepository(context);
+    public IMemberRepository MemberRepository => _memberRepository ??= new MemberRepository(context);
 
     public async Task<bool> Complete()
     {
