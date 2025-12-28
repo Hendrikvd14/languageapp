@@ -8,8 +8,8 @@ namespace API.Controllers
 {
     public class MemberController(IUnitOfWork uow) : BaseApiController
     {
-        [Authorize]
-        [HttpGet("{id}")] //localhost:5001/api/members/bob-id
+        //[Authorize]
+        [HttpGet("{id}")] //localhost:5001/api/member/bob-id
         public async Task<ActionResult<Member>> GetMember(string id)
         {
             var member = await uow.MemberRepository.GetMemberByIdAsync(id);

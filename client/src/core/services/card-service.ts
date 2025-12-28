@@ -9,11 +9,9 @@ import { Card } from '../../types/cards';
 export class CardService {
   private http = inject(HttpClient);
   private baseUrl = environment.apiUrl;
-
-
+  
   getCards() {
     return this.http.get<Card[]>(this.baseUrl + 'card');
   }
-
   
 }

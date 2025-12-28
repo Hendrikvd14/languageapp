@@ -1,15 +1,40 @@
+@if (activeCard(); as card) {
+<div class="hero-content h-screen min-w-screen flex flex-col items-center gap-6">
+    <!-- FLIP CARD -->
+    <div class="flip-card w-96 h-90">  <!-- hoogte aanpassen naar behoefte -->
+        <div class="flip-card-inner" [class.flipped]="showBack()">
+            <!-- FRONT -->
+            <div class="flip-card-front card bg-base-100 w-96 shadow-sm">
+                <figure>
+                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Card image" />
+                </figure>
+                <div class="card-body">
+                    <h1 class="card-title">{{ card.front.toUpperCase() }}</h1>
+                    <p>{{ card.exampleSentence }}</p>
+                </div>
+            </div>
 
-<div class="hero-content h-screen min-w-screen">
-    <div class="card bg-base-100 w-96 shadow-sm">
-        <figure>
-            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
-        </figure>
-        <div class="card-body">
-            <h2 class="card-title">Card Title</h2>
-            <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
+            <!-- BACK -->
+            <div class="flip-card-back card bg-base-100 w-96 shadow-sm">
+                <figure>
+                    <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Card image" />
+                </figure>
+                <div class="card-body">
+                    <h1 class="card-title">{{ card.back.toUpperCase() }}</h1>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- BUTTONS -->
+    <div class="flex flex-row gap-6">
+        <button class="btn btn-ghost w-10 text-2xl" (click)="previousCard()">❌</button>
+        
+        <button class="btn btn-accent w-35" (click)="showBackCard(!showBack())">
+            @if (!showBack()) { SHOW ANSWER } @else { SHOW CARD }
+        </button>
+        
+        <button class="btn btn-ghost w-10 text-2xl" (click)="nextCard()">✅</button>
+    </div>
 </div>
+}

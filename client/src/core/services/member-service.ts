@@ -14,7 +14,7 @@ export class MemberService {
 
   getMember(id: string) {
     console.log(id);
-    return this.http.get<Member>(this.baseUrl + 'members/' + id).pipe(
+    return this.http.get<Member>(this.baseUrl + 'member/' + id).pipe(
       tap(member => {
         this.member.set(member)
       })

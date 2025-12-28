@@ -6,6 +6,7 @@ import { Register } from '../features/account/register/register';
 import { Login } from '../features/account/login/login';
 import { authGuard } from '../core/guards/auth-guard';
 import { MemberProfile } from '../features/members/member-profile/member-profile';
+import { memberResolver } from '../features/members/member-resolver';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -15,7 +16,12 @@ export const routes: Routes = [
         canActivate: [authGuard],
         children: [
             { path: 'cards', component: LanguageCard },
-            { path: 'member-profile/:id', component: MemberProfile }
+            { 
+                path: 'member-profile/:id', 
+                component: MemberProfile, 
+                resolve: {member: memberResolver},
+                runGuardsAndResolvers:'always', 
+            }
             
         ]
     },

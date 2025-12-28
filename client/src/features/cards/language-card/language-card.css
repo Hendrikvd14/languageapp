@@ -1,0 +1,29 @@
+.flip-card {
+  perspective: 1000px; /* Geeft het 3D-effect */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* Duur van de flip, pas aan naar wens */
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Verbergt de achterkant tijdens flip */
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg); /* Back begint gedraaid */
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg); /* Flip naar back */
+}
