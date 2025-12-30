@@ -28,9 +28,7 @@ namespace API.Controllers
             {
                 Back = card.Back,
                 Front = card.Front,
-                ExampleSentence = card.ExampleSentence,
-                SourceLanguage = card.SourceLanguage,
-                TargetLanguage = card.TargetLanguage
+                ExampleSentence = card.ExampleSentence
             };
 
             uow.CardRepository.AddCard(newCard);

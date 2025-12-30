@@ -29,7 +29,7 @@ public class Seed
 
             if (deck == null)
             {
-                deck = new Deck { Name = "Spaans" };
+                deck = new Deck { Name = "Spaans", SourceLanguage = "Engels", TargetLanguage = "Spaans" };
                 context.Decks.Add(deck);
             }
 
@@ -52,8 +52,6 @@ public class Seed
                     Front = cardDto.Front,
                     Back = cardDto.Back,
                     ExampleSentence = cardDto.ExampleSentence,
-                    SourceLanguage = cardDto.SourceLanguage,
-                    TargetLanguage = cardDto.TargetLanguage,
                     Deck = deck // ← Navigation property is beter dan DeckId
                 });
             }

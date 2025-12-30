@@ -32,9 +32,7 @@ public class CardRepository(AppDbContext context) : ICardRepository
             Id = card.Id,
             Front = card.Front,
             Back = card.Back,
-            ExampleSentence = card.ExampleSentence,
-            SourceLanguage = card.SourceLanguage,
-            TargetLanguage = card.TargetLanguage
+            ExampleSentence = card.ExampleSentence
         })
         .ToListAsync();
     }

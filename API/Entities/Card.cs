@@ -9,8 +9,7 @@ public class Card
     public string Back { get; set; } = null!;
     public string? ExampleSentence { get; set; }
     
-    public string SourceLanguage { get; set; }= null!;
-    public string TargetLanguage { get; set; }= null!;
+    
 
     // navigation props
     public int DeckId { get; set; }

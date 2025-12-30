@@ -14,6 +14,7 @@ public class AppDbContext(DbContextOptions options) : IdentityDbContext<AppUser>
     public DbSet<Deck> Decks { get; set; }
     public DbSet<ReviewHistory> ReviewHistories { get; set; }
     public DbSet<UserCardProgress> UserCardProgress { get; set; }
+    public DbSet<MemberDeck> MemberDecks { get; set; }
 
 
 
@@ -44,9 +45,17 @@ public class AppDbContext(DbContextOptions options) : IdentityDbContext<AppUser>
             .IsRequired()
             .HasMaxLength(200);
 
+            modelBuilder.Entity<MemberDeck>()
+            .HasOne(m => m.Member)
+            .WithMany(md => md.MemberDecks)
+            .HasForeignKey(m => m.MemberId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<MemberDeck>()
+        .HasKey(x => new {x.MemberId, x.DeckId});
 
         modelBuilder.Entity<ReviewHistory>()
-            .HasIndex(rh => new { rh.UserId, rh.CardId, rh.ReviewedAt });
+            .HasIndex(rh => new { rh.AppUserId, rh.CardId, rh.ReviewedAt });
 
         modelBuilder.Entity<ReviewHistory>()
             .HasIndex(rh => rh.ReviewedAt);

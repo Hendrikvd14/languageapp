@@ -3,6 +3,7 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251230193358_UpdateRelationalModel")]
+    partial class UpdateRelationalModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.1");
@@ -125,6 +128,9 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("MemberId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -138,6 +144,8 @@ namespace API.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MemberId");
 
                     b.ToTable("Decks");
                 });
@@ -181,24 +189,6 @@ namespace API.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Members");
-                });
-
-            modelBuilder.Entity("API.Entities.MemberDeck", b =>
-                {
-                    b.Property<string>("MemberId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("DeckId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("StartedAt")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("MemberId", "DeckId");
-
-                    b.HasIndex("DeckId");
-
-                    b.ToTable("MemberDecks");
                 });
 
             modelBuilder.Entity("API.Entities.ReviewHistory", b =>
@@ -430,6 +420,13 @@ namespace API.Data.Migrations
                     b.Navigation("Deck");
                 });
 
+            modelBuilder.Entity("API.Entities.Deck", b =>
+                {
+                    b.HasOne("API.Entities.Member", null)
+                        .WithMany("Decks")
+                        .HasForeignKey("MemberId");
+                });
+
             modelBuilder.Entity("API.Entities.Member", b =>
                 {
                     b.HasOne("API.Entities.AppUser", "User")
@@ -439,25 +436,6 @@ namespace API.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("API.Entities.MemberDeck", b =>
-                {
-                    b.HasOne("API.Entities.Deck", "Deck")
-                        .WithMany("MemberDecks")
-                        .HasForeignKey("DeckId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("API.Entities.Member", "Member")
-                        .WithMany("MemberDecks")
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Deck");
-
-                    b.Navigation("Member");
                 });
 
             modelBuilder.Entity("API.Entities.UserCardProgress", b =>
@@ -539,13 +517,11 @@ namespace API.Data.Migrations
             modelBuilder.Entity("API.Entities.Deck", b =>
                 {
                     b.Navigation("Cards");
-
-                    b.Navigation("MemberDecks");
                 });
 
             modelBuilder.Entity("API.Entities.Member", b =>
                 {
-                    b.Navigation("MemberDecks");
+                    b.Navigation("Decks");
                 });
 #pragma warning restore 612, 618
         }

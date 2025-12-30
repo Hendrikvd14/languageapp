@@ -17,7 +17,6 @@ namespace API.Controllers
         {
             var user = new AppUser
             {
-                DisplayName = registerDto.DisplayName,
                 Email = registerDto.Email.ToLowerInvariant(),
                 UserName = registerDto.Email.ToLowerInvariant(),
                 Member = new Member
