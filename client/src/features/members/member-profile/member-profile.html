@@ -62,14 +62,17 @@
                 <h2 class="card-title">Mijn talen</h2>
 
                 <div class="flex flex-wrap gap-4">
-                    @for (deck of member.decks; track $index) {
-                        <div class="badge badge-primary badge-lg">🇬🇧 Engels {{deck.name}}</div>
+                    <button class="btn btn-primary" (click)="openModal()">Add Course</button>
+                    
+                    @for (deck of member.memberDecks; track $index) {
+                        <div class="badge badge-primary badge-lg">{{deck.name}}</div>
+                        
                     }
                     
-                    <div class="badge badge-outline badge-lg">🇪🇸 Spaans</div>
+                    <!-- <div class="badge badge-outline badge-lg">🇪🇸 Spaans</div>
                     <button class="btn btn-sm btn-outline">
                         + Taal toevoegen
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </section>
@@ -122,3 +125,6 @@
 }@else {
     <p>Nothing</p>
 }
+<app-memberdeck-modal 
+    #languageModal 
+    (closeModal)="onClose()" />

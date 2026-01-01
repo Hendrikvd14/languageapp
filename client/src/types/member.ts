@@ -9,7 +9,7 @@ export type Member = {
   description: string
   city: string
   country: string
-  decks: Deck[]
+  memberDecks: Deck[]
 }
 export type Deck = {
   id: number
@@ -23,4 +23,9 @@ export type Card = {
   front: string
   back: string
   exampleSentence: string
+}
+
+export type MemberDeck = {
+  memberId: string
+  deckId: number
 }

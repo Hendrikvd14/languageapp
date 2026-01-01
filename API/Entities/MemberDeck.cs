@@ -3,8 +3,7 @@ using System;
 namespace API.Entities;
 
 public class MemberDeck
-{
-    
+{ 
     public string MemberId { get; set; } = null!;
     public Member Member { get; set; } = null!;
 
