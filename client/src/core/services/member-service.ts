@@ -22,6 +22,7 @@ export class MemberService {
   }
 
   addDeckToMember(id: number) {
-    return this.http.post<MemberDeck>(this.baseUrl + 'memberDeck' + id, null)
+    console.log('url ' + this.baseUrl + 'member/deck/' + id, null);
+    return this.http.post(this.baseUrl + 'member/deck/' + id, null)
   }
 }

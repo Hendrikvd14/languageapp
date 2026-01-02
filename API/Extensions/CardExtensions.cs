@@ -12,7 +12,9 @@ public static class CardExtensions
         {
             Back = card.Back,
             Front = card.Front,
-            ExampleSentence = card.ExampleSentence
+            ExampleSentence = card.ExampleSentence,
+            SourceLanguage = "",
+            TargetLanguage = ""
         };
     }
 }

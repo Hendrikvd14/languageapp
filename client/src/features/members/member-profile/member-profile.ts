@@ -1,9 +1,9 @@
-import { Component, inject, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, inject, input, OnInit, signal, ViewChild } from '@angular/core';
 import { AccountService } from '../../../core/services/account-service';
 import { MemberService } from '../../../core/services/member-service';
 import { ToastService } from '../../../core/services/toast-service';
-import { Deck } from '../../../types/member';
-import { MemberDeckModal } from '../memberDeck-modal/memberdeck-modal';
+import { Deck, Member } from '../../../types/member';
+import { MemberDeckModal } from '../memberDeck-modal/memberDeck-modal';
 
 
 @Component({
@@ -17,9 +17,10 @@ export class MemberProfile implements OnInit {
   private accountService = inject(AccountService);
   protected memberService = inject(MemberService);
   private toast = inject(ToastService);
+  member = input.required<Member>();
   //protected deck = signal<Deck | null>(null);
   constructor() {
-   console.log('MemberProfile');
+    console.log('MemberProfile');
   }
   ngOnInit(): void {
     console.log('onInit');
@@ -35,6 +36,18 @@ export class MemberProfile implements OnInit {
 
   onClose() {
     console.log('Modal closed');
+  }
+
+  onLanguageSelected(deck: Deck) {
+    // hier kan je:
+    // - een MemberDeck aanmaken
+    // - een API call doen
+    // - het profiel updaten
+
+    this.memberService.addDeckToMember(deck.id);
+
+
+
   }
 
 }

@@ -22,7 +22,7 @@ public class DeckRepository(AppDbContext context) : IDeckRepository
         return await context.Decks.FindAsync(id);
     }
 
-    public async Task<IReadOnlyList<Deck>> GetDecks(int id)
+    public async Task<IReadOnlyList<Deck>> GetDecks()
     {
         return await context.Decks.ToListAsync();
     }

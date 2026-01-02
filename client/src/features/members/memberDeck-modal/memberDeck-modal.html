@@ -1,18 +1,25 @@
-@if(deckService.getDecks(); as decks) {
- @for (deck of decks; track deck) {
-    <div class="badge badge-primary badge-lg">{{deck.name}}</div>                    
-  }
-}
 <dialog #languageModal class="modal">
   <div class="modal-box max-w-lg">
     <h3 class="text-lg font-bold">Select language</h3>
-    
+    @if(decks$ | async; as decks) {
+    <div class="flex flex-wrap gap-2">
+      @for (deck of decks; track deck.id) {
+      <div class="flex flex-wrap mt-2">
+        <button class="badge badge-lg" 
+          [class.badge-primary]="selectedDeck()?.id === deck.id"
+          [class.badge-outline]="selectedDeck()?.id !== deck.id" 
+          (click)="selectLanguage(deck)">{{ deck.targetLanguage
+          }}
+        </button>
+      </div>
 
-
-
+      }
+    </div>
+    }
 
     <div class="modal-action">
-      <button (click)="submit()" class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary" [disabled]="!selectedDeck()" (click)="submit()">Submit
+      </button>
     </div>
   </div>
 

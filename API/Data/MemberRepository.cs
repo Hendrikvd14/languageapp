@@ -7,9 +7,10 @@ namespace API.Data;
 
 public class MemberRepository(AppDbContext context) : IMemberRepository
 {
-    public void AddDeckToMember(string memberId, int deckId)
+
+    public void AddDeckToMember(MemberDeck memberDeck)
     {
-        context.MemberDecks.Add(new MemberDeck { MemberId = memberId, DeckId = deckId });
+        context.MemberDecks.Add(memberDeck);
     }
 
     public async Task<Member?> GetMemberByIdAsync(string memberId)
