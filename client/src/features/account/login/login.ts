@@ -50,8 +50,10 @@ export class Login {
           
         },
         error: error => {
-          console.log(error);
+          console.error(error);
+          console.log('login.ts ' + error);
           this.validationErrors.set(error)
+          console.log(this.validationErrors);
         }
       })
     }

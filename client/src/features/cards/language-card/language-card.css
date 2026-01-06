@@ -27,3 +27,15 @@
 .flip-card-inner.flipped {
   transform: rotateY(180deg); /* Flip naar back */
 }
+
+/* Swipe naar links */
+.swipe-left {
+    transform: translateX(-150%) rotate(-10deg);
+    opacity: 0;
+}
+
+/* Swipe naar rechts */
+.swipe-right {
+    transform: translateX(150%) rotate(10deg);
+    opacity: 0;
+}

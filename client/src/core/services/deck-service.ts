@@ -14,4 +14,10 @@ export class DeckService {
   getDecks() {
     return this.http.get<Deck[]>(this.baseUrl + 'deck/');
   }
+  getDecksNotLinkedToUser() {
+    return this.http.get<Deck[]>(this.baseUrl + 'deck/notlinked');
+  }
+  getDecksLinkedToUser() {
+    return this.http.get<Deck[]>(this.baseUrl + 'deck/linked');
+  }
 }

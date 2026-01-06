@@ -9,4 +9,6 @@ public interface IDeckRepository
     void DeleteDeck(Deck deck);
     Task<Deck?> GetDeck(int id);
     Task<IReadOnlyList<Deck>> GetDecks();
+    Task<IReadOnlyList<Deck>> GetDecksNotLinkedToUser(string id);
+    Task<IReadOnlyList<Deck>> GetDecksLinkedToUser(string id);
 }

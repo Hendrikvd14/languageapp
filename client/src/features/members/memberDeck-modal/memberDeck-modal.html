@@ -1,14 +1,12 @@
-<dialog #languageModal class="modal">
+<dialog #languageDialog class="modal">
   <div class="modal-box max-w-lg">
     <h3 class="text-lg font-bold">Select language</h3>
     @if(decks$ | async; as decks) {
     <div class="flex flex-wrap gap-2">
       @for (deck of decks; track deck.id) {
       <div class="flex flex-wrap mt-2">
-        <button class="badge badge-lg" 
-          [class.badge-primary]="selectedDeck()?.id === deck.id"
-          [class.badge-outline]="selectedDeck()?.id !== deck.id" 
-          (click)="selectLanguage(deck)">{{ deck.targetLanguage
+        <button class="badge badge-lg cursor-pointer" [class.badge-primary]="selectedDeck()?.id === deck.id"
+          [class.badge-outline]="selectedDeck()?.id !== deck.id" (click)="selectLanguage(deck)">{{ deck.name
           }}
         </button>
       </div>
@@ -17,10 +15,14 @@
     </div>
     }
 
-    <div class="modal-action">
-      <button class="btn btn-primary" [disabled]="!selectedDeck()" (click)="submit()">Submit
+    <!-- <div class="modal-action">
+      <button class="btn btn-primary" [disabled]="!selectedDeck()" (click)="submit()"> @if (mode() === 'add') {
+        Submit
+        } @else {
+        Learn
+        }
       </button>
-    </div>
+    </div> -->
   </div>
 
   <form method="dialog" class="modal-backdrop">

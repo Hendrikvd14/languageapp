@@ -26,4 +26,28 @@ public class DeckRepository(AppDbContext context) : IDeckRepository
     {
         return await context.Decks.ToListAsync();
     }
+
+    public async Task<IReadOnlyList<Deck>> GetDecksLinkedToUser(string memberId)
+    {
+        var assignedDeckIds = await context.MemberDecks
+                .Where(md => md.MemberId.Equals(memberId))
+                .Select(md => md.DeckId)
+                .ToListAsync();
+
+        var decksLinked = await context.Decks.Where(d => assignedDeckIds.Contains(d.Id)).ToListAsync();
+        
+        return decksLinked;
+    }
+
+    public async Task<IReadOnlyList<Deck>> GetDecksNotLinkedToUser(string memberId)
+    {
+        var assignedDeckIds = await context.MemberDecks
+                .Where(md => md.MemberId.Equals(memberId))
+                .Select(md => md.DeckId)
+                .ToListAsync();
+
+        var decksNotLinked = await context.Decks.Where(d => !assignedDeckIds.Contains(d.Id)).ToListAsync();
+        
+        return decksNotLinked;
+    }
 }

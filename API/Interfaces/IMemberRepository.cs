@@ -1,4 +1,5 @@
 using System;
+using API.DTOs;
 using API.Entities;
 using API.Helpers;
 
@@ -6,8 +7,7 @@ namespace API.Interfaces;
 
 public interface IMemberRepository
 {
-    Task<Member?> GetMemberByIdAsync(string memberId);
-    Task<MemberDeck?> GetMemberWithDecksByIdAsync(string memberId);
+    Task<MemberDto?> GetMemberByIdAsync(string memberId);
     void AddDeckToMember(MemberDeck memberDeck);
 
 }

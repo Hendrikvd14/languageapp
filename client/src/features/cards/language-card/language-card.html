@@ -1,8 +1,13 @@
 @if (activeCard(); as card) {
 <div class="hero-content h-screen min-w-screen flex flex-col items-center gap-6">
     <!-- FLIP CARD -->
-    <div class="flip-card w-96 h-90">  <!-- hoogte aanpassen naar behoefte -->
-        <div class="flip-card-inner" [class.flipped]="showBack()">
+    <div 
+    class="flip-card w-96 h-90 cursor-pointer" 
+    (click)="showBackCard(!showBack())"
+    [class.swipe-left]="swipeDirection() === 'left'"
+    [class.swipe-right]="swipeDirection() === 'right'">
+    
+    <div class="flip-card-inner" [class.flipped]="showBack()">
             <!-- FRONT -->
             <div class="flip-card-front card bg-base-100 w-96 shadow-sm">
                 <figure>
@@ -28,13 +33,15 @@
 
     <!-- BUTTONS -->
     <div class="flex flex-row gap-6">
-        <button class="btn btn-ghost w-10 text-2xl" (click)="previousCard()">❌</button>
+        <button class="btn btn-ghost w-10 text-2xl" (click)="failedCard(card.id)">❌</button>
         
         <button class="btn btn-accent w-35" (click)="showBackCard(!showBack())">
             @if (!showBack()) { SHOW ANSWER } @else { SHOW CARD }
         </button>
         
-        <button class="btn btn-ghost w-10 text-2xl" (click)="nextCard()">✅</button>
+        <button class="btn btn-ghost w-10 text-2xl" (click)="successCard(card.id)">✅</button>
     </div>
 </div>
 }
+<app-memberdeck-modal 
+    #languageDialog  />

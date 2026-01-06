@@ -1,4 +1,4 @@
-export type Member = {
+/* export type Member = {
   id: string
   dateOfBirth: string
   imageUrl: string
@@ -10,12 +10,23 @@ export type Member = {
   city: string
   country: string
   memberDecks: Deck[]
+} */
+export type Member = {
+  id: string
+  displayName: string
+  decks: MemberDeckDto[]
 }
 export type Deck = {
   id: number
   name: string
   sourceLanguage: string
   targetLanguage: string
+} 
+
+export type MemberDeckDto = {
+  deckId: number
+  deckName: string
+  startedAt: Date
 }
 
 export type Card = {

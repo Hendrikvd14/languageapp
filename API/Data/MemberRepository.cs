@@ -1,4 +1,5 @@
 using System;
+using API.DTOs;
 using API.Entities;
 using API.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -13,16 +14,23 @@ public class MemberRepository(AppDbContext context) : IMemberRepository
         context.MemberDecks.Add(memberDeck);
     }
 
-    public async Task<Member?> GetMemberByIdAsync(string memberId)
+    public async Task<MemberDto?> GetMemberByIdAsync(string memberId)
     {
-        return await context.Members.FindAsync(memberId);
+        return await context.Members
+                .Where(m => m.Id == memberId)
+                .Select(m => new MemberDto
+                {
+                    Id = m.Id,
+                    DisplayName = m.DisplayName,
+                    Decks = m.MemberDecks.Select(md => new MemberDeckDto
+                    {
+                        DeckId = md.Deck.Id,
+                        DeckName = md.Deck.Name,
+                        StartedAt = md.StartedAt
+                    }).ToList()
+                })
+                .FirstOrDefaultAsync();
     }
 
-    public async Task<MemberDeck?> GetMemberWithDecksByIdAsync(string memberId)
-    {
-        return await context.MemberDecks
-            .Include(md => md.Member)
-            .Include(md => md.Deck)
-            .FirstOrDefaultAsync(md => md.MemberId == memberId);
-    }
+   
 }

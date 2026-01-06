@@ -61,7 +61,8 @@ public class AppDbContext(DbContextOptions options) : IdentityDbContext<AppUser>
             .HasIndex(rh => rh.ReviewedAt);
 
         modelBuilder.Entity<UserCardProgress>()
-            .HasIndex(ucp => new { ucp.AppUserId, ucp.NextReviewDate });
+            .HasIndex(ucp => new { ucp.MemberId, ucp.CardId })
+            .IsUnique();
 
 
 

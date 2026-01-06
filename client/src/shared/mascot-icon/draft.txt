@@ -81,7 +81,7 @@
 
 <img 
       src="/mascot.webp" 
-      alt="Lingua mascotte" 
+      alt="FreeLang mascotte" 
       class="w-full max-w-md lg:max-w-lg rounded-lg 
       transform hover:scale-105 transition-transform 
       duration-300"

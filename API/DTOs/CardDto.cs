@@ -14,8 +14,4 @@ public class CardDto
     public  required string Back { get; set; }
     [JsonPropertyName("exampleSentence")]
     public string? ExampleSentence { get; set; }
-    [JsonPropertyName("sourceLanguage")]
-    public required string SourceLanguage { get; set; }
-    [JsonPropertyName("targetLanguage")]
-    public required string TargetLanguage { get; set; }
 }

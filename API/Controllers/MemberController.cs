@@ -1,3 +1,4 @@
+using API.DTOs;
 using API.Entities;
 using API.Extensions;
 using API.Interfaces;
@@ -9,15 +10,16 @@ namespace API.Controllers
 {
     public class MemberController(IUnitOfWork uow) : BaseApiController
     {
-        //[Authorize]
+        [Authorize]
         [HttpGet("{id}")] //localhost:5001/api/member/bob-id
-        public async Task<ActionResult<Member>> GetMember(string id)
+        public async Task<ActionResult<MemberDto>> GetMember(string id)
         {
             var member = await uow.MemberRepository.GetMemberByIdAsync(id);
             if (member == null) return NotFound();
             return member;
         }
 
+        [Authorize]
         [HttpPost("deck/{id}")] //localhost:5001/api/member/deck/1
         public async Task<ActionResult> AddDeckToMember(int id)
         {
@@ -35,5 +37,9 @@ namespace API.Controllers
             if(await uow.Complete()) return Ok("Deck added to member"); 
             return BadRequest("Problem adding deck to member");
         }
+
+
+
+      
     }
 }

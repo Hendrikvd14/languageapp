@@ -3,6 +3,15 @@ export type Card = {
     front: string
     back: string
     exampleSentence: string
-    sourceLanguage: string
-    targetLanguage: string
+}
+
+export type UserCardProgress = {
+    id: number
+    nextReviewDate: Date
+    interval: number
+    repetition: number
+    easeFactor: number
+    isNew: boolean
+    memberId: string
+    cardId: number
 }

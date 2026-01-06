@@ -16,6 +16,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
         children: [
             { path: 'cards', component: LanguageCard },
+            { path: 'cards/:id', component: LanguageCard },
             { 
                 path: 'member-profile/:id', 
                 component: MemberProfile, 

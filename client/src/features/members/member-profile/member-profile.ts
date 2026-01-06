@@ -2,8 +2,9 @@ import { Component, inject, input, OnInit, signal, ViewChild } from '@angular/co
 import { AccountService } from '../../../core/services/account-service';
 import { MemberService } from '../../../core/services/member-service';
 import { ToastService } from '../../../core/services/toast-service';
-import { Deck, Member } from '../../../types/member';
+import { Deck, Member, MemberDeckDto } from '../../../types/member';
 import { MemberDeckModal } from '../memberDeck-modal/memberDeck-modal';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,17 +14,13 @@ import { MemberDeckModal } from '../memberDeck-modal/memberDeck-modal';
   styleUrl: './member-profile.css',
 })
 export class MemberProfile implements OnInit {
-  @ViewChild('languageModal') modal!: MemberDeckModal;
-  private accountService = inject(AccountService);
+  @ViewChild('languageDialog') modal!: MemberDeckModal;
   protected memberService = inject(MemberService);
-  private toast = inject(ToastService);
   member = input.required<Member>();
-  //protected deck = signal<Deck | null>(null);
-  constructor() {
+  constructor(private router: Router) {
     console.log('MemberProfile');
   }
   ngOnInit(): void {
-    console.log('onInit');
     console.log('Member ' + this.memberService.member()?.displayName);
   }
 
@@ -31,23 +28,12 @@ export class MemberProfile implements OnInit {
     this.memberService.addDeckToMember(0);
   }
   openModal() {
-    this.modal.open();
+    this.modal.openAddCourse();
+  }
+   openStudyModal() {
+    console.log('openModalCards');
+    this.modal.openStudyCourse();
   }
 
-  onClose() {
-    console.log('Modal closed');
-  }
-
-  onLanguageSelected(deck: Deck) {
-    // hier kan je:
-    // - een MemberDeck aanmaken
-    // - een API call doen
-    // - het profiel updaten
-
-    this.memberService.addDeckToMember(deck.id);
-
-
-
-  }
 
 }

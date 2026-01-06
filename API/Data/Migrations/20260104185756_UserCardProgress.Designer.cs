@@ -3,6 +3,7 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260104185756_UserCardProgress")]
+    partial class UserCardProgress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.1");
@@ -249,9 +252,6 @@ namespace API.Data.Migrations
                     b.Property<bool>("IsNew")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("LastReviewedDate")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("MemberId")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -262,15 +262,11 @@ namespace API.Data.Migrations
                     b.Property<int>("Repetition")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("State")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CardId");
 
-                    b.HasIndex("MemberId", "CardId")
-                        .IsUnique();
+                    b.HasIndex("MemberId", "NextReviewDate");
 
                     b.ToTable("UserCardProgress");
                 });
