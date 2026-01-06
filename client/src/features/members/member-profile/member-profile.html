@@ -88,14 +88,28 @@
             </div>
         </section>
 
-        <!-- SNELLE ACTIES -->
-        <!-- <section class="grid grid-cols-1 md:grid-cols-3 gap-6"> -->
-        <section class="grid grid-cols- md:grid-cols-3">
+
+        <!-- VOORTGANG GRAFIEKEN -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Les voortgang -->
             <div class="card bg-base-100 shadow">
                 <div class="card-body">
-                    <h3 class="card-title">Voortgang bekijken</h3>
-                    <p>Bekijk grafieken en statistieken.</p>
-                    <button class="btn btn-outline btn-sm mt-2">Open</button>
+                    <h2 class="card-title">Les Voortgang</h2>
+                    <p class="text-sm opacity-70 mb-4">Overzicht van je voltooide lessen</p>
+                    <app-progress-chart [progressData]="deckProgress" [chartTitle]="'Lessen Voortgang'"
+                        [height]="'250px'" [width]="'100%'">
+                    </app-progress-chart>
+                </div>
+            </div>
+
+            <!-- Woordenschat voortgang -->
+            <div class="card bg-base-100 shadow">
+                <div class="card-body">
+                    <h2 class="card-title">Woordenschat Voortgang</h2>
+                    <p class="text-sm opacity-70 mb-4">Woorden die je geleerd hebt</p>
+                    <app-progress-chart [progressData]="vocabularyProgress" [chartTitle]="'Woordenschat'"
+                        [height]="'250px'" [width]="'100%'">
+                    </app-progress-chart>
                 </div>
             </div>
         </section>

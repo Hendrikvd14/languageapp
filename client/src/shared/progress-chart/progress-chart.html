@@ -1,1 +1,39 @@
-<p>progress-chart works!</p>
+<div class="progress-chart-container">
+  <h3 class="chart-title">{{ chartTitle }}</h3>
+  
+  <div class="chart-wrapper" [style.height]="height" [style.width]="width">
+    <canvas baseChart
+      [datasets]="pieChartDatasets"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [type]="pieChartType">
+    </canvas>
+  </div>
+
+  @if (showLegend) {
+    <div class="completion-summary">
+      <div class="summary-item">
+        <span class="color-indicator" style="background-color: #10B981;"></span>
+        <span class="summary-label">Voltooid:</span>
+        <span class="summary-value">{{ progressData.completed }}</span>
+      </div>
+      <div class="summary-item">
+        <span class="color-indicator" style="background-color: #F59E0B;"></span>
+        <span class="summary-label">Bezig:</span>
+        <span class="summary-value">{{ progressData.inProgress }}</span>
+      </div>
+      <div class="summary-item">
+        <span class="color-indicator" style="background-color: #EF4444;"></span>
+        <span class="summary-label">Nog te doen:</span>
+        <span class="summary-value">{{ progressData.notStarted }}</span>
+      </div>
+      
+      <div class="total-summary mt-4 pt-4 border-t">
+        <div class="text-lg font-semibold">Totaal: {{ totalItems }} items</div>
+        <div class="text-lg font-bold text-primary">
+          {{ completionPercentage }}% voltooid
+        </div>
+      </div>
+    </div>
+  }
+</div>

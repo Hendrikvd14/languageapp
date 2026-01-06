@@ -1,0 +1,35 @@
+.progress-chart-container {
+  @apply bg-base-100 rounded-lg shadow p-6;
+}
+
+.chart-title {
+  @apply text-xl font-bold mb-4 text-gray-800;
+}
+
+.chart-wrapper {
+  @apply relative mx-auto;
+}
+
+.completion-summary {
+  @apply mt-6 space-y-2;
+}
+
+.summary-item {
+  @apply flex items-center gap-3 py-2;
+}
+
+.color-indicator {
+  @apply w-4 h-4 rounded-full;
+}
+
+.summary-label {
+  @apply flex-1 text-gray-600;
+}
+
+.summary-value {
+  @apply font-semibold text-gray-800;
+}
+
+.total-summary {
+  @apply flex justify-between items-center;
+}

@@ -7,12 +7,14 @@ import { lastValueFrom } from 'rxjs';
 import { InitService } from '../core/services/init-service';
 import { jwtInterceptor } from '../core/interceptors/jwt-interceptor';
 import { errorInterceptor } from '../core/interceptors/error-interceptor';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
+    provideCharts(withDefaultRegisterables()),
     provideHttpClient(withInterceptors([jwtInterceptor, errorInterceptor])),
     provideAppInitializer(async () => {
       const initService = inject(InitService);

@@ -1,31 +1,63 @@
-<div class="hero bg-base-200 min-h-screen">
-    <div class="card bg-base-100 w-1/2 mx-auto flex flex-col p-6 rounded-lg shadow-lg">
-        <div class="card-title justify-center text-3xl text-primary">Login</div>
-        <div class="card-body w-full">
+<div class="hero bg-base-200 min-h-screen flex items-center justify-center p-4">
+    <div class="card bg-base-100 w-full max-w-md mx-auto flex flex-col p-6 rounded-lg shadow-lg">
+        <div class="card-title justify-center text-3xl text-primary mb-2">Login</div>
+        <p class="text-center text-gray-500 mb-6">Log in op je account</p>
+        
+        <div class="card-body p-0">
+            <form [formGroup]="credentialsForm" class="flex flex-col gap-4 w-full">
 
-            <form [formGroup]="credentialsForm" class="flex flex-col gap-4 w-full steps">
+                <app-text-input 
+                    class="mt-2" 
+                    label="Email" 
+                    formControlName="email"
+                    placeholder="jouw@email.com" 
+                />
+                <app-text-input 
+                    label="Wachtwoord" 
+                    formControlName="password" 
+                    type="password"
+                    placeholder="Vul je wachtwoord in" 
+                />
 
-                <app-text-input class="mt-2" label="Email" formControlName="email" />
-                <app-text-input label="Password" formControlName="password" type="password" />
+                <!-- Optioneel: Vergeet wachtwoord link -->
+                <div class="text-right mt-1">
+                    <a class="text-sm text-primary hover:underline cursor-pointer">
+                        Wachtwoord vergeten?
+                    </a>
+                </div>
 
+                <div class="flex items-center justify-between gap-3 mt-4">
+                    <button (click)="cancel()" type="button" class="btn btn-outline flex-1">
+                        Annuleren
+                    </button>
+                    <button (click)="login()" class="btn btn-primary flex-1" type="button">
+                        Inloggen
+                    </button>
+                </div>
 
-                <div class="flex items-center justify-end gap-3">
-                    <button (click)="cancel()" type="button" class="btn">Cancel</button>
-                    <button (click)="login()" class="btn btn-primary"
-                        type="button">Login</button>
+                <!-- Optioneel: Registratie link -->
+                <div class="text-center mt-6 pt-4 border-t border-gray-200">
+                    <p class="text-sm text-gray-600">
+                        Nog geen account? 
+                        <a class="text-primary font-medium hover:underline cursor-pointer ml-1">
+                            Registreer hier
+                        </a>
+                    </p>
                 </div>
             </form>
-
-
-
-
         </div>
 
         @if(validationErrors().length > 0) {
-        <div class="mt-5 flex bg-gray-200 rounded-2xl w-1/2 p-3 mx-auto">
-            <ul class="flex flex-col text-error space-y-1">
+        <div class="mt-5 bg-error/10 border border-error/20 rounded-lg p-4">
+            <div class="flex items-center gap-2 text-error mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                <span class="font-medium">Oeps, er ging iets mis:</span>
+            </div>
+            <ul class="flex flex-col text-sm text-error space-y-1 pl-7">
                 @for (error of validationErrors(); track $index) {
-                <li>{{error}}</li>
+                <li class="list-disc">{{error}}</li>
                 }
             </ul>
         </div>
