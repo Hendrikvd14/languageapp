@@ -51,7 +51,7 @@ namespace API.Controllers
         }
 
         [HttpPost("progress")]
-        public async Task<ActionResult<UserCardProgressDto>> AddUserCardProgress(UserCardProgressDto dto)
+        public async Task<ActionResult<UpdateCardProgressDto>> AddUserCardProgress(UpdateCardProgressDto dto)
         {
             var memberId = User.GetMemberId();
             if (memberId == null) return Unauthorized();

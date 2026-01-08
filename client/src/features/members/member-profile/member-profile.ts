@@ -18,8 +18,9 @@ export class MemberProfile implements OnInit {
   @ViewChild('languageDialog') modal!: MemberDeckModal;
   protected memberService = inject(MemberService);
   member = input.required<Member>();
+  protected selectedDeck = signal<MemberDeckDto | null>(null);
 
-deckProgress: ProgressData = {
+/* deckProgress: ProgressData = {
     completed: 48,
     inProgress: 12,
     notStarted: 40
@@ -29,7 +30,7 @@ deckProgress: ProgressData = {
     completed: 620,
     inProgress: 180,
     notStarted: 200
-  };
+  }; */
 
 
   constructor(private router: Router) {
@@ -48,6 +49,17 @@ deckProgress: ProgressData = {
    openStudyModal() {
     console.log('openModalCards');
     this.modal.openStudyCourse();
+  }
+
+ 
+  onClickSelectedDeck(deck: MemberDeckDto) {
+    
+    if (this.selectedDeck() === deck) {
+      console.log('selectedDeckId: ' + this.selectedDeck())
+      this.selectedDeck.set(null);
+    } else {
+      this.selectedDeck.set(deck);
+    }
   }
 
 

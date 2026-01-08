@@ -76,7 +76,8 @@
 
 
                     @for (deck of member.decks; track $index) {
-                    <div class="badge badge-outline badge-lg">{{deck.deckName}}</div>
+                    <button class="btn btn-success btn-outline btn-sm w-fit" (click)="onClickSelectedDeck(deck)">
+                        {{deck.deckName}}</button>
 
                     }
 
@@ -90,29 +91,26 @@
 
 
         <!-- VOORTGANG GRAFIEKEN -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        @if (selectedDeck(); as deck) {
+        <!-- <section class="grid grid-cols-1 md:grid-cols-2 gap-6"> -->
+        <section class="card bg-base-100 shadow">
             <!-- Les voortgang -->
             <div class="card bg-base-100 shadow">
                 <div class="card-body">
-                    <h2 class="card-title">Les Voortgang</h2>
+                    <h2 class="card-title">{{deck.deckName}}</h2>
                     <p class="text-sm opacity-70 mb-4">Overzicht van je voltooide lessen</p>
-                    <app-progress-chart [progressData]="deckProgress" [chartTitle]="'Lessen Voortgang'"
-                        [height]="'250px'" [width]="'100%'">
+                    <app-progress-chart 
+                        [deckId]="deck.deckId" 
+                        [height]="'300px'" 
+                        [width]="'300px'"
+                        [showLegend]="true">
                     </app-progress-chart>
-                </div>
-            </div>
 
-            <!-- Woordenschat voortgang -->
-            <div class="card bg-base-100 shadow">
-                <div class="card-body">
-                    <h2 class="card-title">Woordenschat Voortgang</h2>
-                    <p class="text-sm opacity-70 mb-4">Woorden die je geleerd hebt</p>
-                    <app-progress-chart [progressData]="vocabularyProgress" [chartTitle]="'Woordenschat'"
-                        [height]="'250px'" [width]="'100%'">
-                    </app-progress-chart>
                 </div>
             </div>
         </section>
+        }
+
 
         <!-- INSTELLINGEN -->
         <section class="card bg-base-100 shadow">

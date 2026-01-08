@@ -8,9 +8,11 @@ public class UnitOfWork(AppDbContext context) : IUnitOfWork
     private ICardRepository? _cardRepository;
     private IMemberRepository? _memberRepository;
     private IDeckRepository? _deckRepository;
+    private IChartRepository? _chartRepository;
     public ICardRepository CardRepository => _cardRepository ??= new CardRepository(context);
     public IMemberRepository MemberRepository => _memberRepository ??= new MemberRepository(context);
     public IDeckRepository DeckRepository => _deckRepository ??= new DeckRepository(context);
+    public IChartRepository ChartRepository => _chartRepository ??= new ChartRepository(context);
 
     public async Task<bool> Complete()
     {

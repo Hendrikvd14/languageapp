@@ -1,3 +1,6 @@
+/* @reference "tailwindcss";
+
+
 .progress-chart-container {
   @apply bg-base-100 rounded-lg shadow p-6;
 }
@@ -32,4 +35,4 @@
 
 .total-summary {
   @apply flex justify-between items-center;
-}
+} */
