@@ -25,7 +25,6 @@ export class MemberDeckModal {
   mode = signal<ModalMode>('add');
 
   constructor(private router: Router) {
-    console.log("Decks + " + this.deckService.getDecks());
   }
 
   openAddCourse() {
@@ -36,7 +35,6 @@ export class MemberDeckModal {
   }
 
   openStudyCourse() {
-    console.log('openStudyCourse');
     this.mode.set('study');
     this.selectedDeck.set(null);
     this.decks$ = this.deckService.getDecksLinkedToUser();

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ChartOptions, ChartData, ChartConfiguration } from 'chart.js';
+import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { ChartConfiguration } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { Chart, ChartTypeEnum } from '../../types/chart';
+import { Chart } from '../../types/chart';
 import { ChartService } from '../../core/services/chart-service';
 
 
@@ -12,7 +12,8 @@ import { ChartService } from '../../core/services/chart-service';
   imports: [CommonModule, BaseChartDirective],
   styleUrl: './progress-chart.css',
 })
-export class ProgressChart implements OnInit {
+export class ProgressChart implements OnChanges {
+@ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
 
   @Input() deckId!: number | null;
@@ -22,6 +23,7 @@ export class ProgressChart implements OnInit {
   @Input() width: string = '300px';
 
   chartData!: Chart;
+
 
   // Pie chart configuratie
   pieChartOptions: ChartConfiguration<'pie'>['options'] = {
@@ -66,39 +68,61 @@ export class ProgressChart implements OnInit {
   pieChartType = 'pie' as const;
 
 
-  constructor(private chartService: ChartService) { }
+  constructor(private chartService: ChartService, private cdr: ChangeDetectorRef) { }
 
-
-  ngOnInit() {
-    if (!this.deckId) return;
-
-    this.loadChartData();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['deckId'] && this.deckId) {
+      console.log('2');
+      console.log('progress-chart changed: deckId: ' + this.deckId);
+      this.resetChart();
+      this.loadChartData();
+    }
   }
+
+  private resetChart() {
+  this.pieChartLabels = [];
+  this.pieChartDatasets = [
+    {
+      data: [],
+      backgroundColor: [],
+      borderColor: '#FFFFFF',
+      borderWidth: 2,
+      hoverBackgroundColor: [],
+    },
+  ];
+
+}
 
   private loadChartData() {
     this.chartService.getProgress(this.deckId!).subscribe({
       next: (chart: Chart) => {
+        console.log('3');
         this.chartData = chart;
-        console.log("loadChartData");
         // Labels uit backend
-        this.pieChartLabels = chart.labels;
+        this.pieChartLabels = [...chart.labels];
 
         // Dataset uit backend
         if (chart.datasets && chart.datasets.length > 0) {
+          console.log('4');
           const ds = chart.datasets[0];
-          console.log("datasets");
           this.pieChartDatasets = [
             {
-              data: ds.data,
-              backgroundColor: ds.backgroundColors,
+              data: [...ds.data],
+              backgroundColor: [...ds.backgroundColors],
               borderColor: '#FFFFFF',
               borderWidth: 2,
-              hoverBackgroundColor: ds.backgroundColors.map((c) => c), // zelfde kleur
+              hoverBackgroundColor: [...ds.backgroundColors.map((c) => c)], // zelfde kleur
             },
           ];
-          console.log('chartData = ' + this.pieChartDatasets[0].data[0])
         }
 
+        this.chart?.update();
+        this.cdr.detectChanges();
+
+        console.log('pieChartLabels: ' + this.pieChartLabels.length);
+        console.log('pieChartDatasets: ' + this.pieChartDatasets.length);
+        let isTrue = this.showLegend && this.pieChartLabels.length > 0 && this.pieChartDatasets.length > 0;
+        console.log(isTrue);
         // Eventueel de chartTitle uit backend gebruiken
         if (chart.title) {
           this.chartTitle = chart.title;
@@ -111,15 +135,24 @@ export class ProgressChart implements OnInit {
   }
 
   get totalItems(): number {
-    if (!this.pieChartDatasets || this.pieChartDatasets.length === 0) return 0;
+    if (!this.pieChartDatasets || this.pieChartDatasets.length === 0) {
+      console.log("5");
+      return 0;
+    }
+      
+      
+    console.log('7');
     return (this.pieChartDatasets[0].data as number[]).reduce((a, b) => a + b, 0);
   }
 
   // Percentage voltooid berekenen
   get completionPercentage(): number {
-    if (!this.pieChartLabels || !this.pieChartDatasets || this.pieChartDatasets.length === 0)
+    if (!this.pieChartLabels || !this.pieChartDatasets || this.pieChartDatasets.length === 0) {
+      console.log('6');
       return 0;
-
+    }
+      
+    console.log('8');
     // Veronderstel dat "Voltooid" altijd het eerste label is
     const completedIndex = this.pieChartLabels.indexOf('Geleerd');
     const completedValue =
@@ -130,20 +163,20 @@ export class ProgressChart implements OnInit {
     return this.totalItems > 0 ? Math.round((completedValue / this.totalItems) * 100) : 0;
   }
 
-  
+
 
   getBackgroundColor(index: number): string {
-  const dataset = this.pieChartDatasets[0];
-  if (!dataset || !dataset.backgroundColor) return '#ccc'; // fallback kleur
+    const dataset = this.pieChartDatasets[0];
+    if (!dataset || !dataset.backgroundColor) return '#ccc'; // fallback kleur
 
-  const colors = dataset.backgroundColor;
-  // TypeScript kan hier eventueel casten
-  if (Array.isArray(colors)) {
-    return colors[index] as string;
+    const colors = dataset.backgroundColor;
+    // TypeScript kan hier eventueel casten
+    if (Array.isArray(colors)) {
+      return colors[index] as string;
+    }
+
+    return '#ccc';
   }
-
-  return '#ccc';
-}
 
 }
 

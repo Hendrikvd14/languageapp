@@ -11,17 +11,14 @@ export class CardService {
   private baseUrl = environment.apiUrl;
   
   getCards() {
-    console.log('getCards: ' + this.baseUrl + 'card');
     return this.http.get<Card[]>(this.baseUrl + 'card');
   }
 
   getCardsToStudy(deckId: number) {
-    console.log('getCards: ' + `${this.baseUrl}card/study/${deckId}`);
     return this.http.get<Card[]>(`${this.baseUrl}card/study/${deckId}`);
   }
 
   addProgress(cardId: number, success: boolean) {
-    console.log('addProgress: ' + this.baseUrl + 'card/progress', {cardId, success});
     return this.http.post(this.baseUrl + 'card/progress', {cardId, success});
   }
   

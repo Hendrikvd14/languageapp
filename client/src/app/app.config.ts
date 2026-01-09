@@ -18,7 +18,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([jwtInterceptor, errorInterceptor])),
     provideAppInitializer(async () => {
       const initService = inject(InitService);
-      console.log("appConfig")
 
       return new Promise<void>((resolve) => {
         setTimeout(async () => {
@@ -31,7 +30,7 @@ export const appConfig: ApplicationConfig = {
             }
             resolve();
           }
-        }, 500)
+        }, 3100)
       })
 
     })

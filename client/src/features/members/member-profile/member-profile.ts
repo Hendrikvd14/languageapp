@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit, signal, ViewChild } from '@angular/core';
+import { Component, inject, Input, input, OnChanges, OnInit, signal, SimpleChanges, ViewChild } from '@angular/core';
 import { AccountService } from '../../../core/services/account-service';
 import { MemberService } from '../../../core/services/member-service';
 import { ToastService } from '../../../core/services/toast-service';
@@ -14,32 +14,16 @@ import { ProgressData, ProgressChart } from '../../../shared/progress-chart/prog
   templateUrl: './member-profile.html',
   styleUrl: './member-profile.css',
 })
-export class MemberProfile implements OnInit {
+export class MemberProfile  {
   @ViewChild('languageDialog') modal!: MemberDeckModal;
   protected memberService = inject(MemberService);
   member = input.required<Member>();
   protected selectedDeck = signal<MemberDeckDto | null>(null);
 
-/* deckProgress: ProgressData = {
-    completed: 48,
-    inProgress: 12,
-    notStarted: 40
-  };
-
-  vocabularyProgress: ProgressData = {
-    completed: 620,
-    inProgress: 180,
-    notStarted: 200
-  }; */
-
 
   constructor(private router: Router) {
-    console.log('MemberProfile');
   }
-  ngOnInit(): void {
-    console.log('Member ' + this.memberService.member()?.displayName);
-  }
-
+  
   addDeckToMember() {
     this.memberService.addDeckToMember(0);
   }
@@ -47,7 +31,6 @@ export class MemberProfile implements OnInit {
     this.modal.openAddCourse();
   }
    openStudyModal() {
-    console.log('openModalCards');
     this.modal.openStudyCourse();
   }
 
@@ -55,10 +38,11 @@ export class MemberProfile implements OnInit {
   onClickSelectedDeck(deck: MemberDeckDto) {
     
     if (this.selectedDeck() === deck) {
-      console.log('selectedDeckId: ' + this.selectedDeck())
+      
       this.selectedDeck.set(null);
     } else {
       this.selectedDeck.set(deck);
+      console.log('1')
     }
   }
 

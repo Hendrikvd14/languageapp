@@ -12,14 +12,16 @@ import { AccountService } from '../../core/services/account-service';
 export class Nav implements OnInit {
 
   private router = inject(Router);
-  
+
   protected selectedTheme = signal<string>(localStorage.getItem('theme') || 'light');
   protected themes = themes;
-  protected accountService = inject(AccountService)
+  protected accountService = inject(AccountService);
 
   ngOnInit(): void {
     document.documentElement.setAttribute('data-theme', this.selectedTheme());
   }
+
+  
 
   handleSelectTheme(theme: string) {
     this.selectedTheme.set(theme);
