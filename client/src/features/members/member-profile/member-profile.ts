@@ -5,7 +5,7 @@ import { ToastService } from '../../../core/services/toast-service';
 import { Deck, Member, MemberDeckDto } from '../../../types/member';
 import { MemberDeckModal } from '../memberDeck-modal/memberDeck-modal';
 import { Router } from '@angular/router';
-import { ProgressData, ProgressChart } from '../../../shared/progress-chart/progress-chart';
+import { ProgressChart } from '../../../shared/progress-chart/progress-chart';
 
 
 @Component({
